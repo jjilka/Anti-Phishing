@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>My Web Page</title>
+</head>
+<body bgcolor="yellow">
+
+<form name="f1", action="4.php", method="post">
+Firstname <input type="text" name="name"><br>
+Surname <input type="text" name="surname"><br>
+email id <input type="text" name="email"><br>
+Username:<input type="text" name="username"><br>
+Password:<input type="password" name="password"><br>
+Gender:<br>
+<input type="radio" name="gender" value="male">Male<br>
+<input type="radio" name="gender" value="female" select="true" checked>Female<br>
+Interests:<br>
+<input type="hidden" name="swim" value="0">
+<input type="checkbox" name="swim" value="swim">Swimming<br>
+<input type="checkbox" name="dance" value="dance">Dancing<br>
+<input type="checkbox" name="read" value="read" checked>Reading<br>
+<input type="checkbox" name="play" value="play" checked>Playing<br>
+Field:<br>
+<select name="field">
+<option value="extc">EXTC</option>
+<option value="inft" selected>INFT</option>
+<option value="cmpn">CMPN</option>
+<option value="elex">ELEX</option>
+</select><br>
+Feedback<br>
+<textarea name="feedback" height=100 width=100></textarea><br>
+  <p>
+    <img id="siimage" style="border: 1px solid #000; margin-right: 15px" src="./securimage_show.php?sid=<?php echo md5(uniqid()) ?>" alt="CAPTCHA Image" align="left">
+    <object type="application/x-shockwave-flash" data="./securimage_play.swf?bgcol=#ffffff&amp;icon_file=./images/audio_icon.png&amp;audio_file=./securimage_play.php" height="32" width="32">
+    <param name="movie" value="./securimage_play.swf?bgcol=#ffffff&amp;icon_file=./images/audio_icon.png&amp;audio_file=./securimage_play.php" />
+    </object>
+    &nbsp;
+    <a tabindex="-1" style="border-style: none;" href="#" title="Refresh Image" onclick="document.getElementById('siimage').src = './securimage_show.php?sid=' + Math.random(); this.blur(); return false"><img src="./images/refresh.png" alt="Reload Image" onclick="this.blur()" align="bottom" border="0"></a><br />
+    <strong>Enter Code*:</strong><br />
+    <input type="text" name="ct_captcha" size="12" maxlength="16" />
+  </p><br>
+  
+<input type="submit" value="Create Account">
+<input type="reset">
+</form>
+</body>
+</html>

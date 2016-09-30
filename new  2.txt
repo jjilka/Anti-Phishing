@@ -1,0 +1,15 @@
+ action="4.php" method="post"
+ <?php
+ ?>
+ var username = $('#username').val();
+ var capshare = $('#capshare').val();
+ 
+ $.ajax({
+ type: "POST",
+ url: "signin4.php",
+ data: {letter:test,name: username,letter1: capshare}
+ }).done(function( result ) {
+ //$("#dis").html(test);
+ $("#dis").html(result);
+ //$("#dis1").show();
+ });
